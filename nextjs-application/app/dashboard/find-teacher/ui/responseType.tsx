@@ -27,6 +27,7 @@ export interface TeacherExtra {
     createdAt: string;
     updatedAt: string;
     Teachers: TeacherExtra;
+    teachingExperience: string;
     
   }
   

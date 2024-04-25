@@ -11,7 +11,7 @@ export default function Page() {
                     At &apos;My Classes Tripura&apos;, we pride ourselves on offering a 
                     learning experience that goes above and beyond what other educational
                      websites provide. Here&apos;s why we 
-                     <span className="underline decoration-2 decoration-indigo-600">stand out:</span>
+                     <span className="underline decoration-2 decoration-indigo-600 ml-1">stand out:</span>
                 </p>
                 <ul className="flex flex-col gap-6">
                     <li>
