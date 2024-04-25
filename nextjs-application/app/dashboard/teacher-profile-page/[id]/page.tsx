@@ -7,7 +7,7 @@ import TeacherProfileLayout from "./TeacherProfileLayout";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Teacher } from "../../find-teacher/ui/responseType";
-import { useStore } from "@/app/dashboard/find-teacher/ui/Management";
+import { useStore } from "@/app/dashboard/State/Management";
 
 export default function Page({params}:{params:{id:string}}){
     const router = useRouter()

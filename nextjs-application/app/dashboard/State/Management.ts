@@ -1,5 +1,5 @@
 import {create} from 'zustand'
-import { Teacher } from './responseType'
+import { Teacher } from '../find-teacher/ui/responseType'
 
 type Store = {
   Teachers:Teacher[],

@@ -14,7 +14,7 @@ const profilePicture = '/profilePicture_demo.png';
 const profileBanner = '/profileBanner_demo.png';
 const profilePath = '/dashboard/teacher-profile-page/teacher-profile'
 const demoPath = '/dashboard/teacher-profile-page/demo'
-
+const default_profile = "data:image/png;base64,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"
 const stars = [ 
   { name: "star1", value: 1, },
   { name: "star2", value: 2, },
@@ -46,7 +46,7 @@ const TeacherProfileLayout = ({TeacherInfo}:{TeacherInfo:Teacher}) => {
           <div className="relative flex flex-col md:flex-row flex-wrap w-full md:items-center gap-4">
             <div className='w-full md:w-56 relative md:block md:static'>
               <Image
-                src={TeacherInfo?.avatar ? TeacherInfo?.avatar :profilePicture}
+                src={TeacherInfo?.avatar ? TeacherInfo?.avatar :default_profile}
                 alt="teacher avatar"
                 width={1000}
                 height={1000}
