@@ -6,9 +6,9 @@ export default function TeacherProfile({Education ,Experience }:{Education:strin
                     Okay
                 </p>
                 <div className="flex flex-col gap-6">
-                    <li className="text-violet-600 border-b-2 border-slate-200 font-bold text-xl">Education</li>
+                    <li className="text-indigo-600 border-b-2 border-slate-200 font-bold text-xl">Education</li>
                     <p>{Education}</p>
-                    <li className="text-violet-600 border-b-2 border-slate-200 font-bold text-xl">Professional Experience</li>
+                    <li className="text-indigo-600 border-b-2 border-slate-200 font-bold text-xl">Professional Experience</li>
                     <p>{Experience}</p>
                 </div>
             </div>

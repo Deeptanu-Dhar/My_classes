@@ -10,7 +10,7 @@ import {
   Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue,
 } from "./ui/select"
 import { Input } from "./ui/input"
-import { useStore } from './ui/Management';
+import { useStore } from '../State/Management';
 import { backendFetch } from '@/app/lib/actions';
 import LoadingSkeleton from './ui/loadingSkeleton';
 
@@ -20,6 +20,7 @@ export default function Page() {
   const [loading, setLoading] = useState<boolean>(false);
   const profileImg = '/default_profile.svg';
   const { Teachers, addTeacher, alradyFetchedTeacher, changeAlradyFetchedTeacher } = useStore()
+  console.log(Teachers)
   let value = 0
   useEffect(() => {
 
@@ -70,35 +71,40 @@ export default function Page() {
         {loading ? (
           <p>Loading...</p>
         ) : (
-          <>
-
+          <div className=' m-8 mx-0 md:mx-24 grid grid-cols-1 md:grid-cols-2 gap-6'>
+  {/* previous styling for cards
+  
+              flex  items-center justify-evenly rounded-xl shadow-md self-center
+               border-solid border-2 border-gray-200 bg-white w-10/12 h-60
+  
+              transition-all ease-in delay-500 duration-200 lg:hover:scale-150 lg:hover:w-6/12  
+                 
+               hover:shadow-2xl  p-2 md:py-6 m-1 md:mx-12
+               hover:border-indigo-600   */}
             {
-              Teachers.map((teacher, index) => (
-                <Link href={`/dashboard/teacher-profile-page/${teacher.teacherId}`} key={index}
-                  className="  flex  items-center justify-evenly rounded-xl shadow-md self-center
-             border-solid border-2 border-gray-200 bg-white w-10/12 h-60
-
-            transition-all ease-in delay-500 duration-200 lg:hover:scale-150 lg:hover:w-6/12  
-               
-             hover:shadow-2xl  p-2 md:py-6 m-1 md:mx-12
-             hover:border-indigo-600  "
-                >
-                  <Image height={70} width={70} src={profileImg}
-                    alt="profile picture" className="w-24 sm:w-36  "
-                  />
-                  <div className='flex flex-col w-1/2'>
-                    <h2 className="  font-semibold text-base sm:text-xl">
-                      {teacher.Teachers.name}
-                    </h2>
-                    <span className='text-base sm:text-xl'>{teacher.description}</span>
-                    <div className='flex flex-col md:flex-row gap-9'>
-                      <span className='text-base sm:text-xl'>Subjects: {teacher.subjectTeaching}</span>
-                      <span className='text-base sm:text-xl'>Qualification: {teacher.qualification}</span>
-                    </div>
+              Teachers.map((teacher, index) => {
+                return(
+                  <div className=' bg-white p-4 py-16 rounded-2xl'>
+                    <Link href={`/dashboard/teacher-profile-page/${teacher.teacherId}`} key={index} className=' flex gap-4  justify-around'
+                    >
+                      <Image height={70} width={70} src={profileImg}
+                        alt="profile picture" className="w-24 sm:w-36 aspect-square"
+                      />
+                      <div className='flex flex-col w-1/2'>
+                        <h2 className="  font-semibold text-base sm:text-xl">
+                          {teacher.Teachers.name}
+                        </h2>
+                        <span className='text-base sm:text-xl'>{teacher.description}</span>
+                        <div className='flex flex-col md:flex-row gap-9'>
+                          <span className='text-base sm:text-xl'>Subjects: {teacher.subjectTeaching}</span>
+                          <span className='text-base sm:text-xl'>Qualification: {teacher.qualification}</span>
+                        </div>
+                      </div>
+                    </Link>
                   </div>
-                </Link>
-              ))}
-          </>
+                )
+              })}
+          </div>
         )}
         
       </div>

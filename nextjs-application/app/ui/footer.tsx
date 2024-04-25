@@ -17,7 +17,7 @@ export default function Footer() {
                 </div>
                 {/* flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center */}
                 <div className="mt-4 md:m-0">
-                    <nav className="list-none flex gap-6 md:gap-16 justify-evenly">
+                    <nav className="list-none flex gap-6 md:gap-16 justify-evenly flex-col sm:flex-row items-center">
 
                         <Link href={"/dashboard/terms"} className="text-gray-600 hover:text-indigo-800 cursor-pointer">T&C</Link>
 
